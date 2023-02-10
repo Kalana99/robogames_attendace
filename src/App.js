@@ -1,9 +1,7 @@
-import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 import QrReaderComponent from './components/QrReaderComponent';
 import Attendance from './components/Attendance';
-
-// import QrReaderComponent from './qr_components/QrReaderComponent';
 
 function App() {
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { QrReader } from "react-qr-reader";
-import { updateDoc, doc, collection } from "firebase/firestore";
+import { updateDoc, doc } from "firebase/firestore";
 
 import { db } from '../javascript/firebase';
 import NavBarComp from './NavBarComp';
@@ -10,7 +10,6 @@ const QrReaderComponent = () => {
 
     const navigate = useNavigate();
     const [data, setData] = useState('No result');
-    const [isError, setIsError] = useState(false);
     const [error, setError] = useState('no error');
 
     const writeData = async () => {
@@ -25,12 +24,12 @@ const QrReaderComponent = () => {
             };
 
             let result = await updateDoc(docRef, update_data);
+            console.log(result)
             navigate('/');
         } 
         catch (e) {
 
             console.error("Error updating document: ", e);
-            setIsError(true);
             setError(e);
         }
     }
