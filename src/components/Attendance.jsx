@@ -31,7 +31,7 @@ const Attendance = () => {
     return (
         <>
             <NavBarComp></NavBarComp>
-            <h1>Attendace</h1>
+            <h1>Attendance</h1>
             <ListGroup as="ul" numbered>
                 {
                     teams && teams.map(team => {

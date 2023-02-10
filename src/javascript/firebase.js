@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
+// import firebase from "firebase";
 // import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+// import { getFirestore } from "firebase/firestore";
+import { initializeFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -13,5 +15,9 @@ const firebaseConfig = {
 
 
 const app = initializeApp(firebaseConfig);
-// export const auth = getAuth();
-export const db = getFirestore(app);
+// firebase.firestore().settings({ experimentalForceLongPolling: true });
+export const db = initializeFirestore(app, {
+    experimentalForceLongPolling: true, // this line
+    useFetchStreams: false, // and this line
+  })
+// export const db = getFirestore(app);
