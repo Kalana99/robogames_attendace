@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+
+import QrReaderComponent from './components/QrReaderComponent';
+import Attendance from './components/Attendance';
+
+// import QrReaderComponent from './qr_components/QrReaderComponent';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+	return (
+		<Router>
+			<div className="App">
+				<div id="content">
+					<Routes>
+						<Route exact path="/" element={<Attendance />} />
+						<Route path="/att" element={<Attendance />} />
+						<Route path="/qr" element={<QrReaderComponent />} />
+					</Routes>
+				</div>
+			</div>
+		</Router>
+	);
 }
 
 export default App;
