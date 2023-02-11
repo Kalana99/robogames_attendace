@@ -39,30 +39,10 @@ const Attendance = () => {
                             <div className="team-container">
                                 <h4>{team.teamName}</h4>
                                 <p>{team.leader}</p>
+                                <p>{team.category}</p>
                                 <span>{team.isPresent ? "Present" : "Absent"}</span>
+                                <br />
                             </div>
-
-                            // <Card style={{ width: '18rem' }}>
-                            //     <Card.Body>
-                            //         <Card.Title>{team.teamName}</Card.Title>
-                            //         <Card.Subtitle className="mb-2 text-muted">{team.leader}</Card.Subtitle>
-                            //         <Badge bg="primary" pill>
-                            //             {team.isPresent ? "Present" : "Absent"}
-                            //         </Badge>
-                            //     </Card.Body>
-                            // </Card>
-                            // <ListGroup.Item
-                            //     as="li"
-                            //     className="d-flex justify-content-between align-items-start"
-                            // >
-                            //     <div className="ms-2 me-auto">
-                            //         <div className="fw-bold">{team.teamName}</div>
-                            //         {team.leader}
-                            //     </div>
-                            //     <Badge bg="primary" pill>
-                            //         {team.isPresent ? "Present" : "Absent"}
-                            //     </Badge>
-                            // </ListGroup.Item>
                         )
                     })
                 }

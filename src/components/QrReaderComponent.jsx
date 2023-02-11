@@ -12,7 +12,7 @@ const QrReaderComponent = () => {
     const [data, setData] = useState('No result');
     const [error, setError] = useState('no error');
     const [teams, setTeams] = useState([]);
-    const [selected] = useState("environment");
+    // const [selected, setSelected] = useState("environment");
 
     const fetchPost = async () => {
 
@@ -80,8 +80,14 @@ const QrReaderComponent = () => {
     return (
         <>
             <NavBarComp></NavBarComp>
+            {/* <select onChange={(e) => setSelected(e.target.value)}>
+                <option value={"environment"}>Back Camera</option>
+                <option value={"user"}>Front Camera</option>
+            </select> */}
             <QrReader
-                facingMode={selected}
+                constraints={{
+                    facingMode: 'environment'
+                }}
                 delay={1000}
                 onResult={(result, error) => {
                     if (!!result) {
