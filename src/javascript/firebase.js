@@ -18,6 +18,6 @@ const app = initializeApp(firebaseConfig);
 // firebase.firestore().settings({ experimentalForceLongPolling: true });
 export const db = initializeFirestore(app, {
     experimentalForceLongPolling: true, // this line
-    useFetchStreams: false, // and this line
+    // useFetchStreams: false, // and this line
   })
 // export const db = getFirestore(app);
